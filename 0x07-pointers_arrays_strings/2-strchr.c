@@ -7,7 +7,7 @@
  * @c: the charachter we intend to return
  * Return: always 0
  */
-char *my_strchr(char *s, char c)
+char *_strchr(char *s, char c)
 {
 	int x;
 

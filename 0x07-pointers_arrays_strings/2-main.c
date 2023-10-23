@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -11,7 +11,7 @@ int main(void)
 	    char *s = "hello";
 	        char *f;
 
-		    f = my_strchr(s, 'l');
+		    f = _strchr(s, 'l');
 
 		        if (f != NULL)
 				    {
