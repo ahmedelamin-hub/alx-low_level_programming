@@ -7,7 +7,6 @@
  *
  * Return: args given
  */
-
 void print_all(const char * const format, ...)
 {
 	if (format != NULL)
@@ -15,6 +14,7 @@ void print_all(const char * const format, ...)
 		int x = 0;
 		char *str;
 		va_list args;
+
 		va_start(args, format);
 
 		while (format[x] != '\0')
@@ -36,21 +36,21 @@ void print_all(const char * const format, ...)
 						str = "(nil)";
 					printf("%s", str);
 					break;
-
 				default:
 					break;
 			}
 
-			if (format[x + 1] != '\0' && 
-					(format[x] == 'c' || format[x] == 'i' || 
+			if (format[x + 1] != '\0' &&
+					(format[x] == 'c' || format[x] == 'i' ||
 					 format[x] == 'f' || format[x] == 's'))
 			{
 				printf(", ");
 			}
 			x++;
 		}
+
 		va_end(args);
 	}
+
 	printf("\n");
 }
-
