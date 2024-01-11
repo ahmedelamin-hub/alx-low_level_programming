@@ -2,6 +2,11 @@
 #define LIST_H
 
 #include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+
 /**
  * struct dlistint_s - linked list
  * @n: integer
