@@ -5,13 +5,9 @@
  * @key: The key
  * @size: The size of the array of the hash table
  *
- * Description: This function calculates the index at which the key/value pair
- * should be stored in the array of the hash table. It uses the hash_djb2
- * function to generate a hash value for the key, and then it finds the
- * index by taking the modulo of the hash value with the size of the array.
+ * Description: This function calculates the index
  *
- * Return: The index at which the key/value pair should be stored in the
- * array of the hash table.
+ * Return: The index at which the key/value pair
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
