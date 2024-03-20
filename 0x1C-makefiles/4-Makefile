@@ -1,0 +1,40 @@
+# Set gcc as compiler
+CC=gcc
+# Define source files
+SRC=main.c school.c
+# Auto-generate object file names from sources
+OBJ=$(SRC:.c=.o)
+# Executable name
+NAME=school
+# Command to remove files
+RM=rm -f
+# Compiler options for strictness
+CFLAGS=-Wall -Werror -Wextra -pedantic
+
+# Build executable
+all: $(NAME)
+
+# Link objects to create executable
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# Compile sources into objects
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Remove temporary files, executable, and objects
+clean:
+	$(RM) *~ $(NAME) $(OBJ)
+
+# Only remove object files
+oclean:
+	$(RM) $(OBJ)
+
+# Comprehensive cleanup
+fclean: clean
+
+# Rebuild everything from scratch
+re: fclean all
+
+# Ensure these aren't confused with files of the same name
+.PHONY: all clean oclean fclean re
