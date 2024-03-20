@@ -1,0 +1,25 @@
+CCOMP=gcc
+SOURCES=main.c school.c
+OBJS=$(SOURCES:.c=.o)
+BIN=school
+DELETE=rm -f
+
+build: $(BIN)
+
+$(BIN): $(OBJS)
+	$(CCOMP) $(OBJS) -o $(BIN)
+
+%.o: %.c
+	$(CCOMP) -c -o $@ $<
+
+clean:
+	$(DELETE) *~ $(BIN)
+
+cleanobj:
+	$(DELETE) $(OBJS)
+
+fullclean: clean cleanobj
+
+rebuild: fullclean build
+
+.PHONY: build clean cleanobj fullclean rebuild
