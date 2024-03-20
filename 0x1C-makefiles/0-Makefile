@@ -1,0 +1,8 @@
+# 0-Makefile
+
+# Name of the executable
+TARGET=school
+
+# Rule for 'all' that builds the executable
+all:
+	gcc main.c school.c -o $(TARGET)
