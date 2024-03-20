@@ -1,0 +1,14 @@
+# 1-Makefile
+
+# Compiler to be used
+CC=gcc
+
+# Source files
+SRC=main.c school.c
+
+# Name of the executable
+TARGET=school
+
+# Rule for 'all' that builds the executable
+all:
+	$(CC) $(SRC) -o $(TARGET)
